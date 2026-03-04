@@ -8,7 +8,10 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: '*', // For now, allowing all during setup. Change to your Vercel URL later for security!
+    credentials: true
+}));
 app.use(express.json());
 
 // Connect to MongoDB
